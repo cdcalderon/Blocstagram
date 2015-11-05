@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ImagesTableViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,8 +16,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    return YES;
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[ImagesTableViewController alloc] init]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+       return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
