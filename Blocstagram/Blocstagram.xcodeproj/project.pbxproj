@@ -27,6 +27,7 @@
 		07EB3DC11BEDC27000BB3141 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EB3DC01BEDC27000BB3141 /* Media.m */; };
 		07EB3DC41BEDC3C800BB3141 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EB3DC31BEDC3C800BB3141 /* Comment.m */; };
 		07EB3DC71BEDCB0B00BB3141 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EB3DC61BEDCB0B00BB3141 /* DataSource.m */; };
+		07EB3DCD1BEF216600BB3141 /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EB3DCC1BEF216600BB3141 /* MediaTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		07EB3DC31BEDC3C800BB3141 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		07EB3DC51BEDCB0B00BB3141 /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
 		07EB3DC61BEDCB0B00BB3141 /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
+		07EB3DCB1BEF216600BB3141 /* MediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaTableViewCell.h; sourceTree = "<group>"; };
+		07EB3DCC1BEF216600BB3141 /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				073BDAD01BE8B031009AD26E /* Images.xcassets */,
 				073BDAD21BE8B031009AD26E /* LaunchScreen.xib */,
 				073BDAC31BE8B031009AD26E /* Supporting Files */,
+				07EB3DCB1BEF216600BB3141 /* MediaTableViewCell.h */,
+				07EB3DCC1BEF216600BB3141 /* MediaTableViewCell.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 			files = (
 				07EB3DBE1BEDC0EA00BB3141 /* User.m in Sources */,
 				07EB3DC41BEDC3C800BB3141 /* Comment.m in Sources */,
+				07EB3DCD1BEF216600BB3141 /* MediaTableViewCell.m in Sources */,
 				07EB3DC11BEDC27000BB3141 /* Media.m in Sources */,
 				073BDAC91BE8B031009AD26E /* AppDelegate.m in Sources */,
 				07EB3DC71BEDCB0B00BB3141 /* DataSource.m in Sources */,
