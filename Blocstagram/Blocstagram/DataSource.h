@@ -17,4 +17,8 @@
 
 - (void) deleteMediaItem:(Media *)item;
 
+- (void) moveMediaItemToTop:(Media *)item;
+
+- (void) swapMediaItemWithTop:(Media *)item;
+
 @end

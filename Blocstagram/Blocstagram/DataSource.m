@@ -71,6 +71,18 @@
     [mutableArrayWithKVO removeObject:item];
 }
 
+- (void) moveMediaItemToTop:(Media *)item {
+    NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
+    [mutableArrayWithKVO removeObject:item];
+    [mutableArrayWithKVO insertObject:item atIndex:0];
+}
+
+- (void) swapMediaItemWithTop:(Media *)item {
+    NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
+    NSUInteger index = [mutableArrayWithKVO indexOfObject:item];
+    [mutableArrayWithKVO exchangeObjectAtIndex:0 withObjectAtIndex:index];
+}
+
 - (void) addRandomData {
     NSMutableArray *randomMediaItems = [NSMutableArray array];
     
