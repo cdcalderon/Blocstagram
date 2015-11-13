@@ -104,6 +104,10 @@
     self.mediaItems = randomMediaItems;
 }
 
++ (NSString *) instagramClientID {
+    return @"#clientID";
+}
+
 - (void) requestNewItemsWithCompletionHandler:(NewItemCompletionBlock)completionHandler {
     if (self.isRefreshing == NO) {
         self.isRefreshing = YES;
