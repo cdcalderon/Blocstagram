@@ -20,7 +20,7 @@
 NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewControllerDidGetAccessTokenNotification";
 
 - (NSString *)redirectURI {
-    return @"<#the redirect URI you specified when signing up with instagram#>";
+    return @"http://bloc.io";
 }
 
 - (void)viewDidLoad {
@@ -54,7 +54,7 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
 }
 
 - (void) dealloc {
-    //[self clearInstagramCookies];
+    [self clearInstagramCookies];
     
     self.webView.delegate = nil;
     
