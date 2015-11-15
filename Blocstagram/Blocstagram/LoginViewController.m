@@ -26,6 +26,13 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.navigationController setToolbarHidden: NO];
+    [self.navigationController.toolbar setBarStyle:UIBarStyleBlackOpaque];
+    UIBarButtonItem *homeButton = [[UIBarButtonItem alloc] initWithTitle:@"Home"
+                                                                   style:UIBarButtonItemStylePlain target:self action:@selector(navigateHome:)];
+    //set toolbar buttons
+    [self setToolbarItems:[NSArray arrayWithObjects:homeButton, nil]];
+
     
     UIWebView *webView = [[UIWebView alloc] init];
     webView.delegate = self;
@@ -34,14 +41,11 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
     self.webView = webView;
     
     self.title = NSLocalizedString(@"Login", @"Login");
-    
-    NSString *urlString = [NSString stringWithFormat:@"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token", [DataSource instagramClientID], [self redirectURI]];
-    NSURL *url = [NSURL URLWithString:urlString];
-    
-    if(url){
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        [self.webView loadRequest:request];
-    }
+    [self navigateToLoginPage];
+}
+
+- (void) navigateHome:(UIBarButtonItem *)button{
+    [self navigateToLoginPage];
 }
 
 - (void) viewWillLayoutSubviews {
@@ -53,12 +57,21 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
     // Dispose of any resources that can be recreated.
 }
 
+- (void)navigateToLoginPage {
+    NSString *urlString = [NSString stringWithFormat:@"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token", [DataSource instagramClientID], [self redirectURI]];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    if (url) {
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        [self.webView loadRequest:request];
+    }
+}
+
 - (void) dealloc {
     [self clearInstagramCookies];
     
     self.webView.delegate = nil;
-    
-    
+
 }
 
 - (void) clearInstagramCookies {

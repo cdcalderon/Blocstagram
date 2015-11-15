@@ -22,7 +22,6 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     //// create the data source (so it can receive the access token notification)
-    
     [DataSource sharedInstance];
     
     UINavigationController *navVC = [[UINavigationController alloc] init];
