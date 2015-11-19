@@ -59,8 +59,13 @@
                         // #1
                         for (Media* mediaItem in self.mediaItems) {
                             [self downloadImageForMediaItem:mediaItem];
+                            NSLog(@"Downloading %@", mediaItem.caption);
                         }
                         
+                        NSLog(@"DONE Downloading with images");
+                        [[DataSource sharedInstance] requestNewItemsWithCompletionHandler:^(NSError *error) {
+                            [self saveImages];
+                        }];
                     } else {
                         [self populateDataWithParameters:nil completionHandler:nil];
                     }
