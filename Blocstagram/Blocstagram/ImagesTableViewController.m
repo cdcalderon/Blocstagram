@@ -175,6 +175,12 @@
     }
 }
 
+- (void) cell:(MediaTableViewCell *)cell didDoubleTapWithTwoFingersImageView:(UIImageView *)imageView {
+    if (cell.mediaItem) {
+        [[DataSource sharedInstance] retryDownloadImageForMediaItem:cell.mediaItem];
+    }
+}
+
 // Override to support conditional editing of the table view.
 //- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
 //    // Return NO if you do not want the specified item to be editable.

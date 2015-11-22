@@ -22,7 +22,7 @@
 @property (nonatomic, strong) NSLayoutConstraint *commentLabelHeightConstraint;
 @property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, strong) UILongPressGestureRecognizer *longPressGestureRecognizer;
-
+@property (nonatomic, strong) UITapGestureRecognizer *doubletapWithTwoFingersGestureRecognizer;
 @end
 
 static UIFont *lightFont;
@@ -45,9 +45,19 @@ static NSParagraphStyle *paragraphStyle;
         self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapFired:)];
         self.tapGestureRecognizer.delegate = self;
         [self.mediaImageView addGestureRecognizer:self.tapGestureRecognizer];
+        
         self.longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressFired:)];
         self.longPressGestureRecognizer.delegate = self;
         [self.mediaImageView addGestureRecognizer:self.longPressGestureRecognizer];
+        
+        self.doubletapWithTwoFingersGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubletapWithTwoFingersFired:)];
+        self.doubletapWithTwoFingersGestureRecognizer.numberOfTouchesRequired = 2;
+        self.doubletapWithTwoFingersGestureRecognizer.numberOfTapsRequired = 2;
+        self.doubletapWithTwoFingersGestureRecognizer.delegate = self;
+        [self.mediaImageView addGestureRecognizer:self.doubletapWithTwoFingersGestureRecognizer];
+
+        
+        
         
         
         self.usernameAndCaptionLabel = [[UILabel alloc] init];
@@ -229,5 +239,9 @@ static NSParagraphStyle *paragraphStyle;
     if (sender.state == UIGestureRecognizerStateBegan) {
         [self.delegate cell:self didLongPressImageView:self.mediaImageView];
     }
+}
+
+- (void) doubletapWithTwoFingersFired:(UITapGestureRecognizer *)sender {
+    [self.delegate cell:self didDoubleTapWithTwoFingersImageView:self.mediaImageView];
 }
 @end

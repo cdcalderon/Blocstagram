@@ -61,7 +61,7 @@
                         [self didChangeValueForKey:@"mediaItems"];
                         // #1
                         for (Media* mediaItem in self.mediaItems) {
-                            [self downloadImageForMediaItem:mediaItem];
+                            [self downloadImageForMediaItem:mediaItem withRetry:NO];
                         }
                         
                     } else {
@@ -211,7 +211,7 @@
         
         if (mediaItem) {
             [tmpMediaItems addObject:mediaItem];
-            [self downloadImageForMediaItem:mediaItem];
+            [self downloadImageForMediaItem:mediaItem withRetry:NO];
         }
     }
     
@@ -249,8 +249,8 @@
      [self saveImages];
 }
 
-- (void) downloadImageForMediaItem:(Media *)mediaItem {
-    if (mediaItem.mediaURL && !mediaItem.image) {
+- (void) downloadImageForMediaItem:(Media *)mediaItem withRetry: (BOOL) retry{
+    if (mediaItem.mediaURL && (!mediaItem.image || retry == YES)) {
         [self.instagramOperationManager GET:mediaItem.mediaURL.absoluteString
                                  parameters:nil
                                     success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -267,6 +267,10 @@
                                         NSLog(@"Error downloading image: %@", error);
                                     }];
     }
+}
+
+- (void) retryDownloadImageForMediaItem:(Media *)mediaItem {
+    [self downloadImageForMediaItem:mediaItem withRetry:YES];
 }
 
 - (NSString *) pathForFilename:(NSString *) filename {
