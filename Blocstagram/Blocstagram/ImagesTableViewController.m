@@ -14,8 +14,9 @@
 #import "MediaTableViewCell.h"
 #import "MediaFullScreenViewController.h"
 
-@interface ImagesTableViewController () <MediaTableViewCellDelegate>
-
+@interface ImagesTableViewController () <MediaTableViewCellDelegate, UIScrollViewDelegate>
+@property (nonatomic, assign) BOOL isDesAccelerating;
+@property (nonatomic, assign) BOOL isInitialLoad;
 @end
 
 @implementation ImagesTableViewController
@@ -30,7 +31,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.isDesAccelerating = NO;
+    self.isInitialLoad = YES;
     [[DataSource sharedInstance] addObserver:self forKeyPath:@"mediaItems" options:0 context:nil];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -136,6 +138,13 @@
     }
 }
 
+- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
+    if (mediaItem.downloadState == MediaDownloadStateNeedsImage) {
+        [[DataSource sharedInstance] downloadImageForMediaItem:mediaItem];
+    }
+}
+
 - (void) infiniteScrollIfNecessary {
     
     NSIndexPath *bottomIndexPath = [[self.tableView indexPathsForVisibleRows] lastObject];
@@ -146,8 +155,12 @@
     }
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [self infiniteScrollIfNecessary];
+
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    self.isInitialLoad = NO;
+    NSLog(@"Did begin dragging");
+    self.isDesAccelerating = NO;
 }
 
 #pragma mark - MediaTableViewCellDelegate
@@ -174,6 +187,10 @@
         [self presentViewController:activityVC animated:YES completion:nil];
     }
 }
+
+
+
+
 
 // Override to support conditional editing of the table view.
 //- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

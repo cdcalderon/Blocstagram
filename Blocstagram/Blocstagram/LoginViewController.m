@@ -74,7 +74,7 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
     NSString *urlString = request.URL.absoluteString;
     if([urlString hasPrefix:[self redirectURI]]){
         //This contains our auth token
-        NSRange rangeOfAccessTokenParameter = [urlString rangeOfString:@"access_token"];
+        NSRange rangeOfAccessTokenParameter = [urlString rangeOfString:@"access_token="];
         NSUInteger indexOfTokenStarting = rangeOfAccessTokenParameter.location + rangeOfAccessTokenParameter.length;
         NSString *accessToken = [urlString substringFromIndex:indexOfTokenStarting];
         [[NSNotificationCenter defaultCenter] postNotificationName:LoginViewControllerDidGetAccessTokenNotification object:accessToken];
