@@ -15,8 +15,6 @@
 #import "MediaFullScreenViewController.h"
 
 @interface ImagesTableViewController () <MediaTableViewCellDelegate, UIScrollViewDelegate>
-@property (nonatomic, assign) BOOL isDesAccelerating;
-@property (nonatomic, assign) BOOL isInitialLoad;
 @end
 
 @implementation ImagesTableViewController
@@ -31,8 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.isDesAccelerating = NO;
-    self.isInitialLoad = YES;
+    
     [[DataSource sharedInstance] addObserver:self forKeyPath:@"mediaItems" options:0 context:nil];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -155,13 +152,6 @@
     }
 }
 
-
-
--(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    self.isInitialLoad = NO;
-    NSLog(@"Did begin dragging");
-    self.isDesAccelerating = NO;
-}
 
 #pragma mark - MediaTableViewCellDelegate
 
