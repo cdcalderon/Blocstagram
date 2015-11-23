@@ -17,6 +17,7 @@
 @interface ImagesTableViewController () <MediaTableViewCellDelegate, UIScrollViewDelegate>
 @property (nonatomic, assign) BOOL isDesAccelerating;
 @property (nonatomic, assign) BOOL isInitialLoad;
+
 @end
 
 @implementation ImagesTableViewController
@@ -139,9 +140,11 @@
 }
 
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
-    if (mediaItem.downloadState == MediaDownloadStateNeedsImage) {
-        [[DataSource sharedInstance] downloadImageForMediaItem:mediaItem];
+    if( self.isDesAccelerating == YES || self.isInitialLoad == YES) {
+        Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
+        if (mediaItem.downloadState == MediaDownloadStateNeedsImage) {
+            [[DataSource sharedInstance] downloadImageForMediaItem:mediaItem];
+        }
     }
 }
 
@@ -155,13 +158,17 @@
     }
 }
 
-
+- (void) scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+    NSLog(@"scrollViewWillBeginDecelerating");
+    self.isDesAccelerating = YES;
+}
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     self.isInitialLoad = NO;
     NSLog(@"Did begin dragging");
     self.isDesAccelerating = NO;
 }
+
 
 #pragma mark - MediaTableViewCellDelegate
 
