@@ -166,7 +166,7 @@
             parameters = @{@"max_id": maxID};
         }
         
-        [self populateDataWithParameters:parameters completionHandler:^(NSError *error){
+        [self populateDataWithParameters:nil completionHandler:^(NSError *error){
             self.isLoadingOlderItems = NO;
             if (completionHandler) {
                 completionHandler(error);
