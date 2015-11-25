@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Blocstagram/LikeButton.h">
+   </FileRef>
+   <FileRef
+      location = "group:Blocstagram/LikeButton.m">
+   </FileRef>
+   <FileRef
+      location = "group:Blocstagram/CircleSpinnerView.h">
+   </FileRef>
+   <FileRef
+      location = "group:Blocstagram/CircleSpinnerView.m">
+   </FileRef>
+   <FileRef
       location = "group:Blocstagram.xcodeproj">
    </FileRef>
    <FileRef
