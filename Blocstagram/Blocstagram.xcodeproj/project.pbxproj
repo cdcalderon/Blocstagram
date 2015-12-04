@@ -31,6 +31,7 @@
 		07CE834B1BF2FB860015764F /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CE834A1BF2FB860015764F /* MediaTableViewCell.m */; };
 		07D6364E1BF5C12800A9BDB9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D6364D1BF5C12800A9BDB9 /* LoginViewController.m */; };
 		5896B92C75A72C123DD50C93 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA4DC95E003E7548B1ABC39 /* libPods.a */; };
+		8E1264361C118E46000209DB /* ComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1264351C118E46000209DB /* ComposeCommentView.m */; };
 		8E1FBFCB1C04AC4F00757CC5 /* CircleSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1FBFCA1C04AC4F00757CC5 /* CircleSpinnerView.m */; };
 		8E1FBFD11C04B5BB00757CC5 /* LikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1FBFD01C04B5BB00757CC5 /* LikeButton.m */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,8 @@
 		07D6364D1BF5C12800A9BDB9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7AA4DC95E003E7548B1ABC39 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE5635007D1F986A16BCD91 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8E1264341C118E46000209DB /* ComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeCommentView.h; sourceTree = "<group>"; };
+		8E1264351C118E46000209DB /* ComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeCommentView.m; sourceTree = "<group>"; };
 		8E1FBFC91C04AC4F00757CC5 /* CircleSpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleSpinnerView.h; sourceTree = "<group>"; };
 		8E1FBFCA1C04AC4F00757CC5 /* CircleSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleSpinnerView.m; sourceTree = "<group>"; };
 		8E1FBFCF1C04B5BB00757CC5 /* LikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeButton.h; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				8E1FBFCA1C04AC4F00757CC5 /* CircleSpinnerView.m */,
 				8E1FBFCF1C04B5BB00757CC5 /* LikeButton.h */,
 				8E1FBFD01C04B5BB00757CC5 /* LikeButton.m */,
+				8E1264341C118E46000209DB /* ComposeCommentView.h */,
+				8E1264351C118E46000209DB /* ComposeCommentView.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 				07D6364E1BF5C12800A9BDB9 /* LoginViewController.m in Sources */,
 				8E1FBFD11C04B5BB00757CC5 /* LikeButton.m in Sources */,
 				07BFB7D01BF2F66700724282 /* DataSource.m in Sources */,
+				8E1264361C118E46000209DB /* ComposeCommentView.m in Sources */,
 				073BDAC61BE8B031009AD26E /* main.m in Sources */,
 				07A7C8C41BEA4CAB00F4B86D /* ImagesTableViewController.m in Sources */,
 			);
