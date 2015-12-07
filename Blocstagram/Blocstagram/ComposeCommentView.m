@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, strong) UIButton *button;
-
+@property (nonatomic, assign) NSInteger animIndex;
 @end
 
 
@@ -23,6 +23,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        self.animIndex = 1;
         self.textView = [UITextView new];
         self.textView.delegate = self;
         
@@ -91,11 +92,56 @@
     _isWritingComment = isWritingComment;
     
     if (animated) {
-        [UIView animateWithDuration:0.2 animations:^{
-            [self layoutSubviews];
-        }];
-
-        [self layoutSubviews];
+//        [UIView animateWithDuration:0.2 animations:^{
+//            [self layoutSubviews];
+//        }];
+        switch (self.animIndex) {
+            case 1:{
+                [UIView animateWithDuration:0.4
+                                      delay:0.0
+                     usingSpringWithDamping:0.7
+                      initialSpringVelocity:1.0
+                                    options:UIViewAnimationOptionCurveEaseInOut
+                                 animations:^
+                 {
+                     [self layoutSubviews];
+                 }
+                                 completion:nil];
+            }
+                break;
+            case 2:{
+                [UIView animateWithDuration:0.4
+                                      delay:0.2
+                     usingSpringWithDamping:0.6
+                      initialSpringVelocity:0.8
+                                    options:UIViewAnimationOptionCurveEaseInOut
+                                 animations:^
+                 {
+                     [self layoutSubviews];
+                 }
+                                 completion:nil];
+            }
+                break;
+            case 3:{
+                [UIView animateWithDuration:0.7
+                                      delay:0.5
+                     usingSpringWithDamping:0.7
+                      initialSpringVelocity:0.1
+                                    options:UIViewAnimationOptionCurveEaseInOut
+                                 animations:^
+                 {
+                     [self layoutSubviews];
+                 }
+                                 completion:nil];
+            }
+                break;
+          
+        }
+        
+        if( self.animIndex == 3) {
+            self.animIndex = 1;
+        }
+        self.animIndex++;
     }
 }
 
