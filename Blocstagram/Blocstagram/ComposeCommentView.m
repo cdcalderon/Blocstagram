@@ -94,7 +94,7 @@
         [UIView animateWithDuration:0.2 animations:^{
             [self layoutSubviews];
         }];
-
+    } else {
         [self layoutSubviews];
     }
 }
@@ -129,18 +129,21 @@
     return YES;
 }
 
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
-    NSString *newText = [textView.text stringByReplacingCharactersInRange:range withString:text];
-    [self.delegate commentView:self textDidChange:newText];
-    return YES;
-}
-
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView {
     BOOL hasComment = (textView.text.length > 0);
     [self setIsWritingComment:hasComment animated:YES];
     
     return YES;
 }
+
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    NSString *newText = [textView.text stringByReplacingCharactersInRange:range withString:text];
+    [self.delegate commentView:self textDidChange:newText];
+    
+    return YES;
+}
+
 
 
 @end
