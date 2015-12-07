@@ -142,6 +142,8 @@
             self.animIndex = 1;
         }
         self.animIndex++;
+    } else {
+        [self layoutSubviews];
     }
 }
 
