@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Blocstagram/UIImage+ImageUtilities.h">
+   </FileRef>
+   <FileRef
+      location = "group:Blocstagram/UIImage+ImageUtilities.m">
+   </FileRef>
+   <FileRef
+      location = "group:CameraViewController.h">
+   </FileRef>
+   <FileRef
+      location = "group:CameraViewController.m">
+   </FileRef>
+   <FileRef
       location = "group:CameraToolbar.h">
    </FileRef>
    <FileRef

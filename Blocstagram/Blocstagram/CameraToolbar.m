@@ -97,4 +97,18 @@
     
     self.purpleView.layer.mask = maskLayer;
 }
+
+# pragma mark - Button Handlers
+
+- (void) leftButtonPressed:(UIButton *)sender {
+    [self.delegate leftButtonPressedOnToolbar:self];
+}
+
+- (void) rightButtonPressed:(UIButton *)sender {
+    [self.delegate rightButtonPressedOnToolbar:self];
+}
+
+- (void) cameraButtonPressed:(UIButton *)sender {
+    [self.delegate cameraButtonPressedOnToolbar:self];
+}
 @end
