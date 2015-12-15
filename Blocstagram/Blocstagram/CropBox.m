@@ -80,7 +80,7 @@
     self.topView.frame = CGRectMake(0, -100, width, 100);
     
     CGFloat yOriginOfBottomView = CGRectGetMaxY(self.topView.frame) + width;
-    CGFloat heightOfBottomView = CGRectGetHeight(self.frame);
+    CGFloat heightOfBottomView = 150; // need to be Height of Container view - yOriginOfBottomView , where yOriginOfBottomView should be CGFloat heightOfBottomView = CGRectGetHeight(self.view.frame) - yOriginOfBottomView;
     self.bottomView.frame = CGRectMake(0, yOriginOfBottomView, width, heightOfBottomView);
     
     CGFloat thirdOfWidth = width / 3;
