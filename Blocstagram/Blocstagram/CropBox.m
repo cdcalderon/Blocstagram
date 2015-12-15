@@ -12,7 +12,9 @@
 
 @property (nonatomic, strong) NSArray *horizontalLines;
 @property (nonatomic, strong) NSArray *verticalLines;
-
+@property (nonatomic, strong) UIView *whiteView;
+@property (nonatomic, strong) UIToolbar *topView;
+@property (nonatomic, strong) UIToolbar *bottomView;
 @end
 
 @implementation CropBox
@@ -22,7 +24,18 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.userInteractionEnabled = NO;
+        self.topView = [UIToolbar new];
+        self.bottomView = [UIToolbar new];
+
+        UIColor *whiteBG = [UIColor colorWithWhite:1.0 alpha:.15];
+
+        self.topView.barTintColor = whiteBG;
+        self.bottomView.barTintColor = whiteBG;
+        self.topView.alpha = 0.5;
+        self.bottomView.alpha = 0.5;
         
+        [self addSubview:self.topView];
+        [self addSubview:self.bottomView];
         NSArray *lines = [self.horizontalLines arrayByAddingObjectsFromArray:self.verticalLines];
         for (UIView *lineView in lines) {
             [self addSubview:lineView];
@@ -62,7 +75,14 @@
 - (void) layoutSubviews {
     [super layoutSubviews];
     
+    //NOTE: Ask Falko how to access NavBar Top Layout Guide from Here, to eliminate Magic Wrong Height and Frame numbers
     CGFloat width = CGRectGetWidth(self.frame);
+    self.topView.frame = CGRectMake(0, -100, width, 100);
+    
+    CGFloat yOriginOfBottomView = CGRectGetMaxY(self.topView.frame) + width;
+    CGFloat heightOfBottomView = CGRectGetHeight(self.frame);
+    self.bottomView.frame = CGRectMake(0, yOriginOfBottomView, width, heightOfBottomView);
+    
     CGFloat thirdOfWidth = width / 3;
     
     for (int i = 0; i < 4; i++) {

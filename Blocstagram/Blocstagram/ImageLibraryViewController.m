@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) PHFetchResult *result;
 
+
+
 @end
 
 @implementation ImageLibraryViewController
@@ -59,9 +61,10 @@ static NSString * const reuseIdentifier = @"Cell";
     CGFloat cellSize = width / divisor;
     
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
-    flowLayout.itemSize = CGSizeMake(cellSize , cellSize );
-    flowLayout.minimumInteritemSpacing = 0;
-    flowLayout.minimumLineSpacing = 0;
+    flowLayout.minimumInteritemSpacing = 1;
+    flowLayout.minimumLineSpacing = 1;
+    flowLayout.itemSize = CGSizeMake(cellSize - flowLayout.minimumInteritemSpacing, cellSize - flowLayout.minimumLineSpacing);
+    
 }
 
 - (void) loadAssets {
