@@ -2,6 +2,24 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ImageLibraryViewController.h">
+   </FileRef>
+   <FileRef
+      location = "group:ImageLibraryViewController.m">
+   </FileRef>
+   <FileRef
+      location = "group:CropImageViewController.h">
+   </FileRef>
+   <FileRef
+      location = "group:CropImageViewController.m">
+   </FileRef>
+   <FileRef
+      location = "group:CropBox.h">
+   </FileRef>
+   <FileRef
+      location = "group:CropBox.m">
+   </FileRef>
+   <FileRef
       location = "group:Blocstagram/UIImage+ImageUtilities.h">
    </FileRef>
    <FileRef
