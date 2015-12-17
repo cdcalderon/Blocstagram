@@ -15,6 +15,7 @@
 #import "MediaFullScreenViewController.h"
 #import "CameraViewController.h"
 #import "ImageLibraryViewController.h"
+#import "PostToInstagramViewController.h"
 
 
 @interface ImagesTableViewController () <MediaTableViewCellDelegate, CameraViewControllerDelegate, ImageLibraryViewControllerDelegate>
@@ -351,6 +352,16 @@
         self.tableView.contentInset = contentInsets;
         self.tableView.scrollIndicatorInsets = scrollIndicatorInsets;
     } completion:nil];
+}
+
+- (void) handleImage:(UIImage *)image withNavigationController:(UINavigationController *)nav {
+    if (image) {
+        PostToInstagramViewController *postVC = [[PostToInstagramViewController alloc] initWithImage:image];
+        
+        [nav pushViewController:postVC animated:YES];
+    } else {
+        [nav dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 
