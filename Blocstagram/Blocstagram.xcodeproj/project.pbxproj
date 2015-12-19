@@ -32,6 +32,7 @@
 		07D6364E1BF5C12800A9BDB9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D6364D1BF5C12800A9BDB9 /* LoginViewController.m */; };
 		5896B92C75A72C123DD50C93 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA4DC95E003E7548B1ABC39 /* libPods.a */; };
 		5CCC0E041C2379B600E5EAC9 /* PostToInstagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCC0E031C2379B600E5EAC9 /* PostToInstagramViewController.m */; };
+		5CCC0E071C24D12200E5EAC9 /* FilterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCC0E061C24D12200E5EAC9 /* FilterCollectionViewCell.m */; };
 		8E1216CC1C1FDB8A00BE5DB6 /* CropImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1216CB1C1FDB8A00BE5DB6 /* CropImageViewController.m */; };
 		8E1216CF1C1FDFBF00BE5DB6 /* ImageLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1216CE1C1FDFBF00BE5DB6 /* ImageLibraryViewController.m */; };
 		8E1264361C118E46000209DB /* ComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1264351C118E46000209DB /* ComposeCommentView.m */; };
@@ -92,6 +93,8 @@
 		07D6364D1BF5C12800A9BDB9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5CCC0E021C2379B600E5EAC9 /* PostToInstagramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostToInstagramViewController.h; sourceTree = "<group>"; };
 		5CCC0E031C2379B600E5EAC9 /* PostToInstagramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostToInstagramViewController.m; sourceTree = "<group>"; };
+		5CCC0E051C24D12200E5EAC9 /* FilterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterCollectionViewCell.h; sourceTree = "<group>"; };
+		5CCC0E061C24D12200E5EAC9 /* FilterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterCollectionViewCell.m; sourceTree = "<group>"; };
 		7AA4DC95E003E7548B1ABC39 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE5635007D1F986A16BCD91 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8E1216CA1C1FDB8A00BE5DB6 /* CropImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CropImageViewController.h; sourceTree = "<group>"; };
@@ -199,6 +202,8 @@
 				8E1216CE1C1FDFBF00BE5DB6 /* ImageLibraryViewController.m */,
 				5CCC0E021C2379B600E5EAC9 /* PostToInstagramViewController.h */,
 				5CCC0E031C2379B600E5EAC9 /* PostToInstagramViewController.m */,
+				5CCC0E051C24D12200E5EAC9 /* FilterCollectionViewCell.h */,
+				5CCC0E061C24D12200E5EAC9 /* FilterCollectionViewCell.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -426,6 +431,7 @@
 				8EF756011C168C400000C7F2 /* CameraViewController.m in Sources */,
 				07802F1D1C015DC400006A1D /* MediaFullScreenViewController.m in Sources */,
 				8E1FBFCB1C04AC4F00757CC5 /* CircleSpinnerView.m in Sources */,
+				5CCC0E071C24D12200E5EAC9 /* FilterCollectionViewCell.m in Sources */,
 				07BFB7C71BF2F53700724282 /* User.m in Sources */,
 				8E1216CF1C1FDFBF00BE5DB6 /* ImageLibraryViewController.m in Sources */,
 				8E69BE901C1AA350008A7B5F /* CropBox.m in Sources */,
