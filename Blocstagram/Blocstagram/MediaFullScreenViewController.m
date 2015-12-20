@@ -23,6 +23,10 @@
     
     if (self) {
         self.media = media;
+        
+        [[NSNotificationCenter defaultCenter] addObserverForName:@"DismissMediaFullScreen" object:nil queue:nil usingBlock:^(NSNotification *note) {
+            [self tapFired:nil];
+        }];
     }
     
     return self;
@@ -53,6 +57,7 @@
     [self.tap requireGestureRecognizerToFail:self.doubleTap];
     
     [self.scrollView addGestureRecognizer:self.tap];
+
     [self.scrollView addGestureRecognizer:self.doubleTap];
     // Do any additional setup after loading the view.
 }

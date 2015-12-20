@@ -17,7 +17,6 @@
 - (void) cellDidPressLikeButton:(MediaTableViewCell *)cell;
 - (void) cellWillStartComposingComment:(MediaTableViewCell *)cell;
 - (void) cell:(MediaTableViewCell *)cell didComposeComment:(NSString *)comment;
-
 @end
 
 @interface MediaTableViewCell : UITableViewCell

@@ -22,6 +22,7 @@
 @property (nonatomic, weak) UIImageView *lastTappedImageView;
 @property (nonatomic, weak) UIView *lastSelectedCommentView;
 @property (nonatomic, assign) CGFloat lastKeyboardAdjustment;
+@property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
 @end
 
 @implementation ImagesTableViewController
@@ -29,7 +30,9 @@
 -(id)initWithStyle:(UITableViewStyle)style{
     self = [super initWithStyle:style];
     if(self){
-        
+        self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapWindowFired:)];
+        self.tapGestureRecognizer.delegate = self;
+        [self.view addGestureRecognizer:self.tapGestureRecognizer];
     }
     return self;
 }
@@ -362,6 +365,12 @@
     } else {
         [nav dismissViewControllerAnimated:YES completion:nil];
     }
+}
+
+
+- (void) tapWindowFired:(UITapGestureRecognizer *)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DismissMediaFullScreen" object:nil];
+
 }
 
 
