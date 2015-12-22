@@ -140,6 +140,9 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Media *item = [DataSource sharedInstance].mediaItems[indexPath.row];
+    
+    NSLog(@"width = %f, height = %f", self.view.frame.size.width, self.view.frame.size.height);
+   
     return [MediaTableViewCell heightForMediaItem:item width:CGRectGetWidth(self.view.frame) traitCollection:self.view.traitCollection];
 }
 
