@@ -10,7 +10,9 @@
 #import <XCTest/XCTest.h>
 #import "ComposeCommentView.h"
 
-@interface ComposeCommentTests : XCTestCase
+@interface ComposeCommentTests : XCTestCase {
+    ComposeCommentView *testComposeCommentView;
+}
 
 @end
 
@@ -18,6 +20,7 @@
 
 - (void)setUp {
     [super setUp];
+    testComposeCommentView = [[ComposeCommentView alloc] init];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
@@ -39,7 +42,7 @@
 }
 
 - (void)testThatComposeCommentSetSetsIsWritingCommentToYesIfThereIsText {
-    ComposeCommentView *testComposeCommentView = [[ComposeCommentView alloc] init];
+    //ComposeCommentView *testComposeCommentView = [[ComposeCommentView alloc] init];
     XCTAssertFalse(testComposeCommentView.isWritingComment, @"Should be false");
     testComposeCommentView.text = @"hello world";
     XCTAssertEqualObjects(testComposeCommentView.text, @"hello world", @"test");
@@ -47,7 +50,7 @@
 }
 
 - (void)testThatComposeCommentSetSetsIsWritingCommentToNoIfThereIsNoText {
-    ComposeCommentView *testComposeCommentView = [[ComposeCommentView alloc] init];
+    //ComposeCommentView *testComposeCommentView = [[ComposeCommentView alloc] init];
     testComposeCommentView.text = @"hello world";
     XCTAssertEqualObjects(testComposeCommentView.text, @"hello world", @"test");
     XCTAssertTrue(testComposeCommentView.isWritingComment, @"Should be true");
