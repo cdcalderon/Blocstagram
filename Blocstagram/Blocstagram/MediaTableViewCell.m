@@ -259,6 +259,8 @@ static NSParagraphStyle *paragraphStyle;
     [layoutCell layoutIfNeeded];
     
     // The height will be wherever the bottom of the comments label is
+    
+    NSLog(@" CGRectGetMaxY(layoutCell.commentView.frame) : %f ::: %f", CGRectGetMaxY(layoutCell.commentView.frame), CGRectGetHeight(layoutCell.frame));
     return CGRectGetMaxY(layoutCell.commentView.frame);
 }
 

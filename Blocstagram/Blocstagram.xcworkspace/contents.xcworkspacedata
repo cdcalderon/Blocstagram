@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ComposeCommentTests.m">
+   </FileRef>
+   <FileRef
+      location = "group:BlocstagramTests/MediaTests.m">
+   </FileRef>
+   <FileRef
       location = "group:PostToInstagramViewController.h">
    </FileRef>
    <FileRef
